@@ -1,0 +1,17 @@
+{
+  "name": "goFish",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "debug": "^2.2.0",
+    "express": "~4.13.1",
+    "nodemon": "^1.8.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-nodemon": "^2.0.4"
+  }
+}

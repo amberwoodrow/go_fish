@@ -1,10 +1,12 @@
-function Player () {
+var deck = require("./deck.js");
+
+function Player() {
   this.hand = [];
   this.score = 0;
 }
 
-Player.prototype.score = function() {
+Player.prototype.addToScore = function() {
   score++;
 };
 
-module.exports = {};
+module.exports = Player;

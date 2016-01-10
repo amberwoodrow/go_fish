@@ -4,3 +4,23 @@ client:
     - 85:80
   volumes:
     - ./client:/usr/local/apache2/htdocs/
+  environment:
+    - VIRTUAL_HOST=gofish.dev
+api:
+  build: ./server
+  ports:
+    - 3010:3000
+  volumes:
+    - ./server:/api
+  environment:
+    - VIRTUAL_HOST=api.gofish.dev
+    - DATABASE_HOST=database
+    - WEBSOCKET_HOST=sockets
+  links:
+    - database
+    - sockets
+sockets:
+  build: ./sockets
+  command: slanger --app_key pusherkey --secret pushersecret -r "redis://redis:6379/0"
+database:
+  image: redis

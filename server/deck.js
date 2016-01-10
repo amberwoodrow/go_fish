@@ -34,22 +34,12 @@ Deck.prototype.shuffle = function() {
   // return this.cards;
 };
 
-// Deck.prototype.deal = function(players) {
+Deck.prototype.deal = function() {
+  return this.cards.splice(0, 7);
+};
 
-//   for (var i=0; i<players.length; i++) {
-//     // this.deck.splice() 7 and push 7 cards
-//   }
+Deck.prototype.draw = function() {
+  return this.cards.splice(0, 1);
+};
 
-//   return hands;
-// };
-
-// Deck.prototype.draw = function() {
-//   // this.shuffledDeck splice a card
-//   // return card
-// };
-
-var deck = new Deck();
-deck.shuffle();
-console.log(deck.cards)
-
-// module.exports = {};
+module.exports = Deck;
