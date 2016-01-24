@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <base href="/">
     <meta charset="utf-8">
-    <title></title>
+    <title>Go Fish</title>
+
+    <!-- 1. Load libraries -->
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="node_modules/angular2/bundles/router.dev.js"></script>
+
+    <!-- 2. Configure SystemJS -->
+    <script>
+      System.config({
+        packages: {
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+      System.import('./app/boot')
+            .then(null, console.error.bind(console));
+    </script>
   </head>
   <body>
 
+    <go-fish-app>Loading...</go-fish-app>
 
-    <script type="text/javascript" src="../deck.js"></script>
-    <script type="text/javascript" src="../player.js"></script>
-    <script type="text/javascript" src="../game.js"></script>
+    <!-- include transpiled JS -->
   </body>
 </html>

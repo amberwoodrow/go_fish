@@ -1,9 +1,9 @@
 client:
   build: ./client
   ports:
-    - 85:80
+    - 3011:3000
   volumes:
-    - ./client:/usr/local/apache2/htdocs/
+    - ./client:/client
   environment:
     - VIRTUAL_HOST=gofish.dev
 api:

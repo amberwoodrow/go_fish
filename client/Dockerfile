@@ -1,3 +1,11 @@
-FROM httpd
+FROM node
 
-COPY . /usr/local/apache2/htdocs/
+COPY . /client
+
+WORKDIR /client
+
+RUN npm install
+
+EXPOSE 3000
+
+CMD [ "npm", "start" ]
