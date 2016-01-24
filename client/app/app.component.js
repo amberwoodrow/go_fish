@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './game/home.component'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', './game/home.component', './game/table-creater.component'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', 'angular2/router', './game/home.component'], f
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, home_component_1;
+    var core_1, router_1, home_component_1, table_creater_component_1;
     var AppComponent;
     return {
         setters:[
@@ -20,6 +20,9 @@ System.register(['angular2/core', 'angular2/router', './game/home.component'], f
             },
             function (home_component_1_1) {
                 home_component_1 = home_component_1_1;
+            },
+            function (table_creater_component_1_1) {
+                table_creater_component_1 = table_creater_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -32,7 +35,8 @@ System.register(['angular2/core', 'angular2/router', './game/home.component'], f
                         directives: [router_1.ROUTER_DIRECTIVES]
                     }),
                     router_1.RouteConfig([
-                        { path: '/', name: 'Home', component: home_component_1.HomeComponent, useAsDefault: true }
+                        { path: '/', name: 'Home', component: home_component_1.HomeComponent, useAsDefault: true },
+                        { path: '/new-game', name: 'TableCreater', component: table_creater_component_1.TableCreaterComponent }
                     ]), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
