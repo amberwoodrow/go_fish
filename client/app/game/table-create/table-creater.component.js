@@ -40,7 +40,7 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http'], function(
                 TableCreaterComponent = __decorate([
                     core_1.Component({
                         providers: [http_1.HTTP_PROVIDERS],
-                        template: "\n    <form class=\"form-inline\">\n      <section class=\"form-group\">\n        <label>Enter nickname: </label>\n        <input #nickname class=\"form-control\" placeholder=\"name\">\n        <button type=\"submit\" class=\"btn btn-default\" (click)=\"create(nickname.value)\">Create table</button>\n      </section>\n    </form>\n  ",
+                        templateUrl: "app/game/table-create/table-creater.html",
                         directives: [router_1.ROUTER_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [http_1.Http])

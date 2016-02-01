@@ -4,15 +4,7 @@ import {Http, HTTP_PROVIDERS, Headers} from 'angular2/http';
 
 @Component({
   providers: [HTTP_PROVIDERS],
-  template: `
-    <form class="form-inline">
-      <section class="form-group">
-        <label>Enter nickname: </label>
-        <input #nickname class="form-control" placeholder="name">
-        <button type="submit" class="btn btn-default" (click)="create(nickname.value)">Create table</button>
-      </section>
-    </form>
-  `,
+  templateUrl: "app/game/table-create/table-creater.html",
   directives: [ROUTER_DIRECTIVES]
 })
 

@@ -24,7 +24,7 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1) {
                 }
                 TableComponent = __decorate([
                     core_1.Component({
-                        template: "\n    <p>Nickname</p>\n  ",
+                        templateUrl: "app/game/table/table.html",
                         directives: [router_1.ROUTER_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [])
