@@ -3,6 +3,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {HomeComponent} from './game/home.component';
 import {TableCreaterComponent} from './game/table-creater.component';
+import {TableComponent} from './game/table.component';
 
 @Component({
     selector: 'go-fish-app',
@@ -14,6 +15,7 @@ import {TableCreaterComponent} from './game/table-creater.component';
 })
 @RouteConfig([
   {path:'/', name:'Home', component: HomeComponent, useAsDefault: true},
-  {path:'/new-game', name:'TableCreater', component: TableCreaterComponent}
+  {path:'/new-game', name:'TableCreater', component: TableCreaterComponent},
+  {path:'/gofish', name:'Table', component: TableComponent}
 ])
 export class AppComponent { }

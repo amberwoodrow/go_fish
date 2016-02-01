@@ -5,9 +5,13 @@ import {Http, HTTP_PROVIDERS, Headers} from 'angular2/http';
 @Component({
   providers: [HTTP_PROVIDERS],
   template: `
-    <label>Enter nickname: </label>
-    <input #nickname placeholder="name">
-    <button (click)="create(nickname.value)">Create table</button>
+    <form class="form-inline">
+      <section class="form-group">
+        <label>Enter nickname: </label>
+        <input #nickname class="form-control" placeholder="name">
+        <button type="submit" class="btn btn-default" (click)="create(nickname.value)">Create table</button>
+      </section>
+    </form>
   `,
   directives: [ROUTER_DIRECTIVES]
 })
@@ -25,6 +29,8 @@ export class TableCreaterComponent {
       .subscribe(
         data => {
           console.log(nickname);
-    });
+    },
+        err => console.log(err.json().message)
+    );
   }
 }

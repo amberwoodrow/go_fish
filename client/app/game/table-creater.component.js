@@ -35,12 +35,12 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http'], function(
                     })
                         .subscribe(function (data) {
                         console.log(nickname);
-                    });
+                    }, function (err) { return console.log(err.json().message); });
                 };
                 TableCreaterComponent = __decorate([
                     core_1.Component({
                         providers: [http_1.HTTP_PROVIDERS],
-                        template: "\n    <label>Enter nickname: </label>\n    <input #nickname placeholder=\"name\">\n    <button (click)=\"create(nickname.value)\">Create table</button>\n  ",
+                        template: "\n    <form class=\"form-inline\">\n      <section class=\"form-group\">\n        <label>Enter nickname: </label>\n        <input #nickname class=\"form-control\" placeholder=\"name\">\n        <button type=\"submit\" class=\"btn btn-default\" (click)=\"create(nickname.value)\">Create table</button>\n      </section>\n    </form>\n  ",
                         directives: [router_1.ROUTER_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [http_1.Http])
