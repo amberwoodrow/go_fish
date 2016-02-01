@@ -1,9 +1,9 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
-import {HomeComponent} from './game/home.component';
-import {TableCreaterComponent} from './game/table-creater.component';
-import {TableComponent} from './game/table.component';
+import {HomeComponent} from './game/home/home.component';
+import {TableCreaterComponent} from './game/table-create/table-creater.component';
+import {TableComponent} from './game/table/table.component';
 
 @Component({
     selector: 'go-fish-app',
