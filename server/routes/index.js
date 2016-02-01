@@ -7,7 +7,8 @@ router.get('/games', function(req, res) {
 });
 
 // create game - send message, "waiting for opponent"
-router.post('/games', function(req, res) {
+router.post('/game', function(req, res) {
+  console.log(req.body);
   res.send("post games");
 });
 
