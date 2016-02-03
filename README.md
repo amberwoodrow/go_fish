@@ -2,7 +2,7 @@
 
 ## Technologies
 Database
- - Redis
+ - MongoDB
 Server
  - Nginx Server
  - Docker

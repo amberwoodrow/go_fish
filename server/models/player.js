@@ -1,3 +1,5 @@
+// MVP now, complexity later
+
 // var mongoose = require('mongoose');
 // var Schema   = mongoose.Schema;
 //
@@ -7,5 +9,5 @@
 //   hand: [],
 //   score: Integer,
 // });
-// 
+//
 // module.exports = mongoose.model("Player", Player);

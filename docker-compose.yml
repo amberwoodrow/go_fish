@@ -24,4 +24,4 @@ sockets:
   build: ./sockets
   command: slanger --app_key pusherkey --secret pushersecret -r "redis://redis:6379/0"
 database:
-  image: redis
+  image: mongo
