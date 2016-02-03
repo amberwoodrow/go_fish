@@ -1,13 +1,17 @@
-<section *ngIf="nickname.value.length===0">
-  <form class="form-inline" (submit)="create(nickname.value)">
+<section *ngIf="myNickname.length===0">
+  <form class="form-inline" (submit)="create(nickname.value, tableName.value)">
     <section class="form-group">
       <label for="name">Enter nickname: </label>
       <input type="text" #nickname class="form-control" placeholder="name" required>
-      <button type="submit" class="btn btn-default">Create table</button>
     </section>
+    <section class="form-group">
+      <label for="table-name">Enter table name: </label>
+      <input type="text" #tableName class="form-control" placeholder="table name" required>
+    </section>
+    <button type="submit" class="btn btn-default">Create table</button>
   </form>
 </section>
 
-<section *ngIf="nickname.value">
-  <p>Name: {{nickname.value}}</p>
+<section *ngIf="myNickname">
+  <p>Name: {{myNickname}} Table name: {{myTableName}}</p>
 </section>

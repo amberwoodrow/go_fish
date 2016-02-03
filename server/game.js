@@ -55,10 +55,10 @@ Game.prototype.turn = function() {
   }
 };
 
-var game = new Game();
-game.turn();
+// var game = new Game();
+// game.turn();
 
-module.exports = {};
+module.exports = Game;
 
 
 //  get num players

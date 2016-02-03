@@ -1,5 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var game = require('../game.js');
+// var deck = require('../game.js');
+// var game = require('../game.js');
+
 
 // get all current games availible
 router.get('/games', function(req, res) {
@@ -9,6 +13,8 @@ router.get('/games', function(req, res) {
 // create game - send message, "waiting for opponent"
 router.post('/game', function(req, res) {
   console.log(req.body);
+  var game = new Game();
+  game.turn();
   res.send("post games");
 });
 
