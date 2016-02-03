@@ -9,7 +9,7 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http'], function(
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, router_1, http_1;
-    var TableCreaterComponent;
+    var GofishTableComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -22,11 +22,16 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http'], function(
                 http_1 = http_1_1;
             }],
         execute: function() {
-            TableCreaterComponent = (function () {
-                function TableCreaterComponent(http) {
+            GofishTableComponent = (function () {
+                function GofishTableComponent(http, router) {
                     this.http = http;
+                    this.router = router;
+                    this.formNotFilled = true;
+                    this.nickname = "";
                 }
-                TableCreaterComponent.prototype.create = function (nickname) {
+                GofishTableComponent.prototype.create = function (nickname) {
+                    // nickname = nickname;
+                    this.formNotFilled = false;
                     var headers = new http_1.Headers();
                     var creds = JSON.stringify({ nickname: nickname });
                     headers.append('Content-Type', 'application/json');
@@ -35,20 +40,22 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http'], function(
                     })
                         .subscribe(function (data) {
                         console.log(nickname);
-                    }, function (err) { return console.log(err.json().message); });
+                        // this.router.navigate(['Table'])
+                    });
                 };
-                TableCreaterComponent = __decorate([
+                GofishTableComponent = __decorate([
                     core_1.Component({
+                        selector: 'table-creater',
                         providers: [http_1.HTTP_PROVIDERS],
-                        templateUrl: "app/game/table-create/table-creater.html",
+                        templateUrl: "app/gofish/gofish-table/gofish-table.html",
                         directives: [router_1.ROUTER_DIRECTIVES]
                     }), 
-                    __metadata('design:paramtypes', [http_1.Http])
-                ], TableCreaterComponent);
-                return TableCreaterComponent;
+                    __metadata('design:paramtypes', [http_1.Http, router_1.Router])
+                ], GofishTableComponent);
+                return GofishTableComponent;
             })();
-            exports_1("TableCreaterComponent", TableCreaterComponent);
+            exports_1("GofishTableComponent", GofishTableComponent);
         }
     }
 });
-//# sourceMappingURL=table-creater.component.js.map
+//# sourceMappingURL=gofish-table.component.js.map

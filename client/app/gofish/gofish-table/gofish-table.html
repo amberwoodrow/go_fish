@@ -1,0 +1,13 @@
+<section *ngIf="nickname.value.length===0">
+  <form class="form-inline" (submit)="create(nickname.value)">
+    <section class="form-group">
+      <label for="name">Enter nickname: </label>
+      <input type="text" #nickname class="form-control" placeholder="name" required>
+      <button type="submit" class="btn btn-default">Create table</button>
+    </section>
+  </form>
+</section>
+
+<section *ngIf="nickname.value">
+  <p>Name: {{nickname.value}}</p>
+</section>

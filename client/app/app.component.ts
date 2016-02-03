@@ -1,21 +1,21 @@
 import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {RouteConfig, Router, ROUTER_DIRECTIVES} from 'angular2/router';
 
-import {HomeComponent} from './game/home/home.component';
-import {TableCreaterComponent} from './game/table-create/table-creater.component';
-import {TableComponent} from './game/table/table.component';
+import {HomeComponent} from './gofish/home/home.component';
+import {GofishTableComponent} from './gofish/gofish-table/gofish-table.component';
 
 @Component({
     selector: 'go-fish-app',
     template: `
-      <h1>Go Fish</h1>
+      <h1>Games</h1>
       <router-outlet></router-outlet>
       `,
     directives: [ROUTER_DIRECTIVES]
 })
+
 @RouteConfig([
   {path:'/', name:'Home', component: HomeComponent, useAsDefault: true},
-  {path:'/new-game', name:'TableCreater', component: TableCreaterComponent},
-  {path:'/gofish', name:'Table', component: TableComponent}
+  {path:'/gofish', name:'GofishTable', component: GofishTableComponent}
 ])
+
 export class AppComponent { }

@@ -24,7 +24,8 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1) {
                 }
                 HomeComponent = __decorate([
                     core_1.Component({
-                        template: "\n    <a [routerLink]=\"['TableCreater']\">Create Table</a>\n    <p>Tables to join</p>\n  ",
+                        templateUrl: "app/gofish/home/home.html",
+                        styleUrls: ["app/gofish/home/home.css"],
                         directives: [router_1.ROUTER_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [])
