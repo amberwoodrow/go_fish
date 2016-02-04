@@ -1,4 +1,5 @@
-System.register(['angular2/core', 'angular2/router', './gofish/home/home.component', './gofish/gofish-table/gofish-table.component'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', './gofish/home/home.component', './gofish/create-gofish-table/create-gofish-table.component', './gofish/gofish-table/gofish-table.component'], function(exports_1) {
+    "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +9,7 @@ System.register(['angular2/core', 'angular2/router', './gofish/home/home.compone
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, home_component_1, gofish_table_component_1;
+    var core_1, router_1, home_component_1, create_gofish_table_component_1, gofish_table_component_1;
     var AppComponent;
     return {
         setters:[
@@ -20,6 +21,9 @@ System.register(['angular2/core', 'angular2/router', './gofish/home/home.compone
             },
             function (home_component_1_1) {
                 home_component_1 = home_component_1_1;
+            },
+            function (create_gofish_table_component_1_1) {
+                create_gofish_table_component_1 = create_gofish_table_component_1_1;
             },
             function (gofish_table_component_1_1) {
                 gofish_table_component_1 = gofish_table_component_1_1;
@@ -36,12 +40,13 @@ System.register(['angular2/core', 'angular2/router', './gofish/home/home.compone
                     }),
                     router_1.RouteConfig([
                         { path: '/', name: 'Home', component: home_component_1.HomeComponent, useAsDefault: true },
-                        { path: '/gofish', name: 'GofishTable', component: gofish_table_component_1.GofishTableComponent }
+                        { path: '/create-gofish-table', name: 'CreateGofishTable', component: create_gofish_table_component_1.CreateGofishTableComponent },
+                        { path: '/gofish/:id', name: 'GofishTable', component: gofish_table_component_1.GofishTableComponent }
                     ]), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;
-            })();
+            }());
             exports_1("AppComponent", AppComponent);
         }
     }
