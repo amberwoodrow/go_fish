@@ -32,6 +32,7 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http'], function(
                     this.myTableName = "";
                     this.gameID = "";
                 }
+                CreateGofishTableComponent.prototype.routerCanReuse = function (next, prev) { return false; };
                 CreateGofishTableComponent.prototype.create = function (nickname, tableName) {
                     var _this = this;
                     this.myNickname = nickname;
@@ -47,7 +48,7 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http'], function(
                         console.log(nickname, tableName);
                         var body = JSON.parse(data._body);
                         _this.gameID = body.Success._id;
-                        _this.router.navigate(['GofishTable', { id: body.Success._id }]);
+                        _this.router.navigate(['GofishTable', { id: _this.gameID }]);
                     });
                 };
                 CreateGofishTableComponent = __decorate([

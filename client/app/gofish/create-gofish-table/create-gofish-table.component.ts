@@ -9,7 +9,7 @@ import {Http, HTTP_PROVIDERS, Headers} from 'angular2/http';
   directives: [ROUTER_DIRECTIVES]
 })
 
-export class CreateGofishTableComponent {
+export class CreateGofishTableComponent implements CanReuse, OnReuse {
   myNickname: string;
   myTableName: string;
   gameID: string;
@@ -19,6 +19,8 @@ export class CreateGofishTableComponent {
     this.myTableName = "";
     this.gameID = "";
   }
+
+  routerCanReuse(next: ComponentInstruction, prev: ComponentInstruction) { return false; }
 
   create(nickname, tableName) {
     this.myNickname = nickname;
@@ -37,8 +39,9 @@ export class CreateGofishTableComponent {
           console.log(nickname, tableName);
           var body = JSON.parse(data._body);
           this.gameID = body.Success._id;
-          this.router.navigate(['GofishTable', {id: body.Success._id}]);
+          this.router.navigate(['GofishTable', {id: this.gameID}]);
     });
+
   }
 
 
