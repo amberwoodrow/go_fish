@@ -16,6 +16,7 @@ api:
     - VIRTUAL_HOST=api.gofish.dev
     - DATABASE_HOST=database
     - WEBSOCKET_HOST=sockets
+    - MONGO_URI=mongodb://mongo.gofish.dev/games
   links:
     - database
     - sockets
@@ -25,3 +26,5 @@ sockets:
   command: slanger --app_key pusherkey --secret pushersecret -r "redis://redis:6379/0"
 database:
   image: mongo
+  ports:
+    - 27017:27017

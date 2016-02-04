@@ -1,8 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var game = require('../game.js');
-// var deck = require('../game.js');
-// var game = require('../game.js');
+var GameModel = require('../models/game.js');
+var Game = require('../game.js');
 
 
 // get all current games availible
@@ -12,10 +11,35 @@ router.get('/games', function(req, res) {
 
 // create game - send message, "waiting for opponent"
 router.post('/game', function(req, res) {
-  console.log(req.body);
-  var game = new Game();
-  game.turn();
-  res.send("post games");
+
+  // var game = new Game();
+  // game.turn();
+
+  // console.log(game.deck.Deck.cards);
+
+// if req.body.id
+// else
+
+if (req.body.gameID === "") {
+  var newGame = new GameModel({
+    tableName: req.body.tableName,
+    players : {
+      p1: {
+        name: req.body.nickname
+      }
+    }
+  });
+
+  newGame.save(function(err, data){
+    if(err){ res.json({'message':err}); }
+    console.log(data._id);
+    res.json({"Success": data});
+  });
+} else {
+  res.json({"Error" : "Table exists already."});
+}
+
+
 });
 
 // join game after nickname entry

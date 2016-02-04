@@ -4,6 +4,9 @@ var routes = require('./routes/index');
 var logger = require('morgan'); // request logger
 var cookieParser = require('cookie-parser'); // setting, getting, encripts cookies
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+
+mongoose.connect(process.env.MONGO_URI);
 
 var app = express();
 

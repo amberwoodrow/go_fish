@@ -12,6 +12,7 @@ import {Http, HTTP_PROVIDERS, Headers} from 'angular2/http';
 export class GofishTableComponent {
   myNickname: string;
   myTableName: string;
+  gameID: string;
 
   constructor(public http:Http, private router: Router) {
     this.myNickname = "";
@@ -21,9 +22,10 @@ export class GofishTableComponent {
   create(nickname, tableName) {
     this.myNickname = nickname;
     this.myTableName = tableName;
+    this.gameID = "";
 
     var headers = new Headers();
-    let creds = JSON.stringify({ nickname: nickname, tableName: tableName});
+    let creds = JSON.stringify({ nickname: nickname, tableName: tableName, gameID: this.gameID});
     headers.append('Content-Type', 'application/json');
 
     this.http.post('http://api.gofish.dev/game', creds, {
@@ -32,7 +34,8 @@ export class GofishTableComponent {
       .subscribe(
         data => {
           console.log(nickname, tableName);
-          // this.router.navigate(['Table'])
+          var body = JSON.parse(data._body);
+          this.gameID = body.Success._id;
     });
   }
 

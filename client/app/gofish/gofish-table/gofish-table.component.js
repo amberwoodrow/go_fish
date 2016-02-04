@@ -30,17 +30,20 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http'], function(
                     this.myTableName = "";
                 }
                 GofishTableComponent.prototype.create = function (nickname, tableName) {
+                    var _this = this;
                     this.myNickname = nickname;
                     this.myTableName = tableName;
+                    this.gameID = "";
                     var headers = new http_1.Headers();
-                    var creds = JSON.stringify({ nickname: nickname, tableName: tableName });
+                    var creds = JSON.stringify({ nickname: nickname, tableName: tableName, gameID: this.gameID });
                     headers.append('Content-Type', 'application/json');
                     this.http.post('http://api.gofish.dev/game', creds, {
                         headers: headers
                     })
                         .subscribe(function (data) {
                         console.log(nickname, tableName);
-                        // this.router.navigate(['Table'])
+                        var body = JSON.parse(data._body);
+                        _this.gameID = body.Success._id;
                     });
                 };
                 GofishTableComponent = __decorate([

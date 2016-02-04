@@ -6,16 +6,16 @@ var Game = new mongoose.Schema({
   deck: [],
   players: {
     p1: {
-        id: Integer,
+        id: Number,
         name: String,
         hand: [],
-        score: Integer
+        score: Number
       },
     p2: {
-        id: Integer,
+        id: Number,
         name: String,
         hand: [],
-        score: Integer
+        score: Number
       }
   }
 });
