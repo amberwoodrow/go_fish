@@ -1,23 +1,23 @@
 # GO Fish!
 
 ## Technologies
-Database
+#### Database
  - MongoDB
-Server
+#### Server
  - Nginx Server
  - Docker
- Backend framework
+#### Backend framework
  - ExpressJS
- Testing
+#### Testing
  - Mocha and Chai
- Frontend
+#### Frontend
  - Angular2 with Typescript
  - Bootstrap
  - Mobile Ready
  - Sass
-Sockets
+#### Sockets
  - Slanger
-Javascript
+#### Javascript
  - ES2015/ES6
-Transpiler for ES2015
+#### Transpiler for ES2015
  - Babel
