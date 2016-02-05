@@ -5,7 +5,7 @@ h3 {
 .game-container {
   background:
     linear-gradient(rgba(155, 167, 174, 0.88), rgba(0, 0, 0, 0.81) ),
-    url(./app/gofish/home/imgs/gofish.jpg);
+    url(/app/gofish/home/imgs/gofish.jpg);
   height: 255px;
   border-radius: 3px;
   background-size: cover;

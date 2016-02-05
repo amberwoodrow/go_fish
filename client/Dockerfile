@@ -6,6 +6,10 @@ WORKDIR /client
 
 RUN npm install
 
-EXPOSE 3000
+RUN apt-get update
+RUN apt-get install nginx -y
 
-CMD [ "npm", "start" ]
+
+EXPOSE 80
+
+CMD nginx -g 'daemon off;' -c /client/nginx.conf

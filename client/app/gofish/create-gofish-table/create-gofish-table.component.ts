@@ -9,7 +9,7 @@ import {Http, HTTP_PROVIDERS, Headers} from 'angular2/http';
   directives: [ROUTER_DIRECTIVES]
 })
 
-export class CreateGofishTableComponent implements CanReuse, OnReuse {
+export class CreateGofishTableComponent {
   myNickname: string;
   myTableName: string;
   gameID: string;
@@ -19,8 +19,6 @@ export class CreateGofishTableComponent implements CanReuse, OnReuse {
     this.myTableName = "";
     this.gameID = "";
   }
-
-  routerCanReuse(next: ComponentInstruction, prev: ComponentInstruction) { return false; }
 
   create(nickname, tableName) {
     this.myNickname = nickname;

@@ -3,7 +3,11 @@ client:
   ports:
     - 3011:3000
   volumes:
-    - ./client:/client
+    - ./client/index.html:/client/index.html
+    - ./client/package.json:/client/package.json
+    - ./client/tsconfig.json:/client/tsconfig.json
+    - ./client/nginx.conf:/client/nginx.conf
+    - ./client/app:/client/app
   environment:
     - VIRTUAL_HOST=gofish.dev
 api:
@@ -16,7 +20,7 @@ api:
     - VIRTUAL_HOST=api.gofish.dev
     - DATABASE_HOST=database
     - WEBSOCKET_HOST=sockets
-    - MONGO_URI=mongodb://mongo.gofish.dev/games
+    - MONGO_URI=mongodb://mongo.dev/games
   links:
     - database
     - sockets
@@ -26,5 +30,12 @@ sockets:
   command: slanger --app_key pusherkey --secret pushersecret -r "redis://redis:6379/0"
 database:
   image: mongo
+  environment:
+    - VIRTUAL_HOST=mongo.dev
   ports:
     - 27017:27017
+typescript:
+  build: ./typescript
+  volumes:
+    - ./client:/data
+  command: tsc -w
