@@ -1,11 +1,28 @@
 h3 {
   color: #fff;
+  padding: 10px 0 0 20px;
+  text-shadow: 1px 1px 0 #5D6767;
+}
+
+.gofish {
+  background:
+    linear-gradient(rgba(155, 167, 174, 0.88), rgba(0, 0, 0, 0.81) ),
+    url(./app/gofish/home/imgs/gofish.jpg);
+}
+
+.freecell {
+  background:
+    linear-gradient(rgba(155, 167, 174, 0.88), rgba(0, 0, 0, 0.81) ),
+    url(./app/gofish/home/imgs/freecell.jpg);
+}
+
+.war {
+  background:
+    linear-gradient(rgba(155, 167, 174, 0.88), rgba(0, 0, 0, 0.81) ),
+    url(./app/gofish/home/imgs/war.jpg);
 }
 
 .game-container {
-  background:
-    linear-gradient(rgba(155, 167, 174, 0.88), rgba(0, 0, 0, 0.81) ),
-    url(/app/gofish/home/imgs/gofish.jpg);
   height: 255px;
   border-radius: 3px;
   background-size: cover;
@@ -18,6 +35,7 @@ h3 {
   overflow: auto;
   box-shadow: inset 0 0 10px #000000;
   background-color: #fff;
+  margin: 20px;
 }
 
 .table-list ul {
@@ -45,9 +63,9 @@ h3 {
   border-radius: 3px;
   margin: 5px auto;
   padding: 5px;
-  background-color: #90D3D7;
-  border: 1px solid #069AA1;
-  color: #000;
+  background-color: #242325;
+  border: 1px solid #3A3E3E;
+  color: #069AA1;
   text-align: center;
   transform-style: flat;
   transition: all 250ms ease-out;

@@ -45,9 +45,9 @@ if (req.body.gameID === "") {
 // join game after nickname entry
 // update nickname
 // send back game - deal
-router.patch('/game/:id', function(req, res) {
-  res.send("patch games");
-});
+// router.patch('/game/:id', function(req, res) {
+//   res.send("patch games");
+// });
 // other post
 // check for card
 // if it exists update deck and hands - send message
